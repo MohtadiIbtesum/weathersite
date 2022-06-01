@@ -29,7 +29,12 @@ h1 {
   background-color: rgba(0,0,0,0.4);
   color: #fff;
 }
-
+.moreButton{
+  font-size: .8rem;
+}
+.moreButton:hover{
+  cursor: pointer;
+}
 .app:before {
   content: '';
   background: url("./images/cyber-city-1920x1080.jpg") no-repeat center center/cover;

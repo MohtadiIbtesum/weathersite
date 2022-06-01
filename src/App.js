@@ -12,10 +12,14 @@ function App() {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
         setData(response.data);
-        
       });
       setLocation("");
+      console.log(data)
     }
+  };
+
+  const moreInfoButton = () => {
+    alert("In future Update!!");
   };
 
   return (
@@ -29,35 +33,37 @@ function App() {
           onKeyPress={searchLocation}
         />
       </div>
-      {data.main ? <div className="container">
-        <div className="top">
-          <div className="location">
-            <p>{data.name}</p>
+      { (data.cod===200) ? <div className="container">
+          <div className="top">
+            <div className="location">
+              <p>{data.name}</p>
+              <p className="moreButton" onClick={() => moreInfoButton()}>
+                More Info
+              </p>
+            </div>
+            <div className="temp">
+              <h1>{data.main.temp}°C</h1>
+            </div>
+            <div className="description">
+              <p className="bold">{data.weather[0].description}</p>
+            </div>
           </div>
-          <div className="temp">
-            
-            <h1>{data.main.temp}℃</h1>
+          <div className="bottom">
+            <div className="feels">
+              <p className="bold">{data.main.feels_like}°C</p>
+              <p>Feels Like</p>
+            </div>
+            <div className="humidity">
+              <p className="bold">{data.main.humidity}%</p>
+              <p>Humidity</p>
+            </div>
+            <div className="wind">
+              <p className="bold">{data.wind.speed} kmh</p>
+              <p>Wind Speed</p>
+            </div>
           </div>
-          <div className="description">
-            <p className="bold">{data.weather[0].description}</p>
-          </div>
-        </div>
-        <div className="bottom">
-          <div className="feels">
-            <p className="bold">{data.main.feels_like}℃</p>
-            <p>Feels Like</p>
-          </div>
-          <div className="humidity">
-            <p className="bold">{data.main.humidity}%</p>
-            <p>Humidity</p>
-          </div>
-          <div className="wind">
-            <p className="bold">{data.wind.speed} kmh</p>
-            <p>Wind Speed</p>
-          </div>
-        </div>
-      </div> : null }
-      
+        </div> : null       
+      } 
     </div>
   );
 }
