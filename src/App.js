@@ -8,6 +8,9 @@ function App() {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=970000fc7abc573ea130dffd016eea40&units=metric`;
 
+  const moreInfo = "";
+
+
   const searchLocation = (event) => {
     if (event.key === "Enter") {
       axios.get(url).then((response) => {
@@ -27,7 +30,8 @@ function App() {
           onChange={(event) => setLocation(event.target.value)}
           placeholder="Enter Location"
           onKeyPress={searchLocation}
-        />
+        /> 
+        {/* <button onClick={()=> moreInfo}>More info</button> */}
       </div>
       {data.main ? <div className="container">
         <div className="top">
