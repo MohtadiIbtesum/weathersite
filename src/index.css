@@ -1,3 +1,4 @@
+
 *{
   box-sizing: border-box;
   margin: 0px;
@@ -43,30 +44,15 @@ h1 {
 .app .search {
   text-align: center;
   padding: 30px 0 2rem 0;
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: auto;
 }
 
 .app input {
-  padding: .7rem 1.2rem;
+  padding: .7rem 1.5rem;
   font-size: 1.2rem;
   border-radius: 25px;
   border: 1px solid rgba(255,255,255, 0.8);
   background: rgba(255,255,255, 0.1);
   color: #f8f8f8;
-  margin-bottom: 5px;
-}
-.app button {
-  padding: .7rem 1.5rem;
-  font-size: .8rem;
-  border-radius: 25px;
-  border: 1px solid rgba(255,255,255, 0.8);
-  background: rgba(255,255,255, 0.1);
-  color: #f8f8f8;
-  width: 30%;
-  margin: auto;
 }
 
 ::placeholder {
@@ -111,3 +97,4 @@ h1 {
 .bold {
   font-weight: 700;
 }
+
